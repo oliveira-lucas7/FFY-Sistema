@@ -4,50 +4,54 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="my-4">Lista de Usuários</h1>
 
-<p>
-    <a asp-action="Create">Criar Novo</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioNome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioTelefone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UsuarioSenha)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioNome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioTelefone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UsuarioSenha)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.UsuarioId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.UsuarioId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.UsuarioId">Deletar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="mb-3">
+    <a class="btn btn-primary create-btn" asp-action="Create">Criar Novo</a>
+</div>
+
+<div class="custom-table-wrapper">
+    <table class="table custom-table">
+        <thead class="thead-dark custom-thead">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuarioNome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuarioTelefone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuarioEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsuarioSenha)
+                </th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UsuarioNome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UsuarioTelefone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UsuarioEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UsuarioSenha)
+                    </td>
+                    <td class="custom-table-actions">
+                        <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.UsuarioId">Editar</a>
+                        <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.UsuarioId">Detalhes</a>
+                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.UsuarioId">Deletar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

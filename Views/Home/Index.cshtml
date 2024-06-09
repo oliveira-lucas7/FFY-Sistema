@@ -2,7 +2,33 @@
     ViewData["Title"] = "Home Page";
 }
 
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <div class="jumbotron jumbotron-fluid bg-dark text-light">
+                <div class="container-dois">
+                    <h1 class="display-4">FindForYou</h1>
+                    <p class="lead">Encontre tudo o que você precisa em um só lugar.</p>
+                    <p class="lead">Perdeu? Achou!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <h4 class="navegue">Navegue pelo site</h4>
+    <div class="cards">
+        <a class="card red" href="https://localhost:7167/Objeto/index">
+            <p class="tip">Objetos</p>
+            <p class="second-text">Cadastro de Objetos</p>
+        </a>
+        <a class="card red" href="https://localhost:7167/Observacao/index">
+            <p class="tip">Observações</p>
+            <p class="second-text">Cadastro de Observações</p>
+        </a>
+        <a class="card red" href="https://localhost:7167/Usuario/index">
+            <p class="tip">Usuário</p>
+            <p class="second-text">Cadastro de Usuário</p>
+        </a>
+    </div>
 </div>

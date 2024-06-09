@@ -4,69 +4,56 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Detalhes</h1>
+<h1 class="text-center my-4">Detalhes</h1>
 
-<div>
-    <h4>Objeto</h4>
+<div class="details-container">
+    <h4 class="text-center">Objeto</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ObjetoNome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ObjetoNome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ObjetoCor)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ObjetoCor)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ObjetoObservacao)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ObjetoObservacao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ObjetoLocalDesaparecimento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ObjetoLocalDesaparecimento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ObjetoFoto)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ObjetoFoto)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ObjetoDtDesaparecimento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ObjetoDtDesaparecimento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ObjetoDtEncontro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ObjetoDtEncontro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ObjetoStatus)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ObjetoStatus)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Usuario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Usuario.UsuarioNome)
-        </dd>
-    </dl>
+    <div class="table-responsive">
+        <table class="table table-bordered details-table">
+            <tbody>
+                <tr>
+                    <th>Nome:</th>
+                    <td>@Html.DisplayFor(model => model.ObjetoNome)</td>
+                </tr>
+                <tr>
+                    <th>Cor:</th>
+                    <td>@Html.DisplayFor(model => model.ObjetoCor)</td>
+                </tr>
+                <tr>
+                    <th>Observação:</th>
+                    <td>@Html.DisplayFor(model => model.ObjetoObservacao)</td>
+                </tr>
+                <tr>
+                    <th>Local de Desaparecimento:</th>
+                    <td>@Html.DisplayFor(model => model.ObjetoLocalDesaparecimento)</td>
+                </tr>
+                <tr>
+                    <th>Foto:</th>
+                    <td>@Html.DisplayFor(model => model.ObjetoFoto)</td>
+                </tr>
+                <tr>
+                    <th>Data de Desaparecimento:</th>
+                    <td>@Html.DisplayFor(model => model.ObjetoDtDesaparecimento)</td>
+                </tr>
+                <tr>
+                    <th>Data de Encontro:</th>
+                    <td>@Html.DisplayFor(model => model.ObjetoDtEncontro)</td>
+                </tr>
+                <tr>
+                    <th>Status:</th>
+                    <td>@Html.DisplayFor(model => model.ObjetoStatus)</td>
+                </tr>
+                <tr>
+                    <th>Usuário:</th>
+                    <td>@Html.DisplayFor(model => model.Usuario.UsuarioNome)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.ObjetoId">Editar</a> |
-    <a asp-action="Index">Voltar para lista</a>
+
+<div class="text-center">
+    <a asp-action="Edit" asp-route-id="@Model?.ObjetoId" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar para lista</a>
 </div>
